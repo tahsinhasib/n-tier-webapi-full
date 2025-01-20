@@ -12,5 +12,7 @@ namespace BLL.DTOs
         public string Name { get; set; }
         public int Qty { get; set; }
         public double Price { get; set; }
+        public int CatId { get; set; } // Add this if you need to specify the category.
     }
+
 }

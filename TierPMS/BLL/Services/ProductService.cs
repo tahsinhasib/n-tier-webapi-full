@@ -44,5 +44,14 @@ namespace BLL.Services
 
         }
 
+
+        public static bool Create(ProductDTO productDTO)
+        {
+            var repo = DataAccessFactory.ProductData();
+            var product = GetMapper().Map<Product>(productDTO);
+            return repo.Create(product);
+        }
+
+
     }
 }
