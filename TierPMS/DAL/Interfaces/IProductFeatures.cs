@@ -16,5 +16,7 @@ namespace DAL.Interfaces
         //List<Product> SearchByName(string name);
         //List<Product> SearchByName(string name);
 
+        List<Product> SearchByQuantity(int quantity); // New method
+
     }
 }

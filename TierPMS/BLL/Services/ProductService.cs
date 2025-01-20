@@ -72,6 +72,13 @@ namespace BLL.Services
         }
 
 
+        public static List<ProductDTO> SearchByQuantity(int quantity)
+        {
+            var repo = DataAccessFactory.ProductFeatures();
+            return GetMapper().Map<List<ProductDTO>>(repo.SearchByQuantity(quantity));
+        }
+
+
 
     }
 }

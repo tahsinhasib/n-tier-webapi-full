@@ -103,5 +103,22 @@ namespace TierPMS.Controllers
 
 
 
+        [HttpGet]
+        [Route("api/product/searchByQuantity/{quantity}")]
+        public HttpResponseMessage SearchByQuantity(int quantity)
+        {
+            try
+            {
+                var data = ProductService.SearchByQuantity(quantity);
+                return Request.CreateResponse(HttpStatusCode.OK, data);
+            }
+            catch (Exception ex)
+            {
+                return Request.CreateResponse(HttpStatusCode.InternalServerError, $"Error: {ex.Message}");
+            }
+        }
+
+
+
     }
 }

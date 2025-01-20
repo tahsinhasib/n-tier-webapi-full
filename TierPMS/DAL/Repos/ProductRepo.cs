@@ -67,5 +67,11 @@ namespace DAL.Repos
         //    return db.SaveChanges() > 0;
         //}
 
+
+        public List<Product> SearchByQuantity(int quantity)
+        {
+            return db.Products.Where(x => x.Qty == quantity).ToList();
+        }
+
     }
 }
