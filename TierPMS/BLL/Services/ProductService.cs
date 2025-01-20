@@ -86,6 +86,14 @@ namespace BLL.Services
         }
 
 
+        //test
+        public static List<ProductDTO> SearchByCategoryName(string categoryName)
+        {
+            var repo = DataAccessFactory.ProductFeatures();
+            return GetMapper().Map<List<ProductDTO>>(repo.SearchByCategoryName(categoryName));
+        }
+
+
 
 
     }

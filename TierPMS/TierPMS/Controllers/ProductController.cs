@@ -136,6 +136,23 @@ namespace TierPMS.Controllers
         }
 
 
+        [HttpGet]
+        [Route("api/product/searchByCategory/{categoryName}")]
+        public HttpResponseMessage SearchByCategoryName(string categoryName)
+        {
+            try
+            {
+                var data = ProductService.SearchByCategoryName(categoryName);
+                return Request.CreateResponse(HttpStatusCode.OK, data);
+            }
+            catch (Exception ex)
+            {
+                return Request.CreateResponse(HttpStatusCode.InternalServerError, $"Error: {ex.Message}");
+            }
+        }
+
+
+
 
 
     }

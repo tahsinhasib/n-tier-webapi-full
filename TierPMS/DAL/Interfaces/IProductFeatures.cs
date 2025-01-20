@@ -20,5 +20,9 @@ namespace DAL.Interfaces
 
         List<Product> SortByQuantityDescending(); // New method
 
+
+        //testing purpose dont know wether it will work or not
+        List<Product> SearchByCategoryName(string categoryName); // New method
+
     }
 }

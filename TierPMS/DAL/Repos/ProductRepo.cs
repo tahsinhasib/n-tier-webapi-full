@@ -79,5 +79,12 @@ namespace DAL.Repos
             return db.Products.OrderByDescending(x => x.Qty).ToList();
         }
 
+        //test
+        public List<Product> SearchByCategoryName(string categoryName)
+        {
+            return db.Products.Where(p => p.Cate.Name == categoryName).ToList();
+        }
+
+
     }
 }
