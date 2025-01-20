@@ -79,6 +79,14 @@ namespace BLL.Services
         }
 
 
+        public static List<ProductDTO> SortByQuantityDescending()
+        {
+            var repo = DataAccessFactory.ProductFeatures();
+            return GetMapper().Map<List<ProductDTO>>(repo.SortByQuantityDescending());
+        }
+
+
+
 
     }
 }

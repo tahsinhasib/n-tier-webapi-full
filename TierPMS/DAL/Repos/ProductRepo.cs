@@ -73,5 +73,11 @@ namespace DAL.Repos
             return db.Products.Where(x => x.Qty == quantity).ToList();
         }
 
+
+        public List<Product> SortByQuantityDescending()
+        {
+            return db.Products.OrderByDescending(x => x.Qty).ToList();
+        }
+
     }
 }

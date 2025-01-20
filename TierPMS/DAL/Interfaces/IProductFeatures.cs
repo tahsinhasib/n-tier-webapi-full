@@ -18,5 +18,7 @@ namespace DAL.Interfaces
 
         List<Product> SearchByQuantity(int quantity); // New method
 
+        List<Product> SortByQuantityDescending(); // New method
+
     }
 }

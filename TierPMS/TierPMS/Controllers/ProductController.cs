@@ -120,5 +120,23 @@ namespace TierPMS.Controllers
 
 
 
+        [HttpGet]
+        [Route("api/product/sortByQuantityDescending")]
+        public HttpResponseMessage SortByQuantityDescending()
+        {
+            try
+            {
+                var data = ProductService.SortByQuantityDescending();
+                return Request.CreateResponse(HttpStatusCode.OK, data);
+            }
+            catch (Exception ex)
+            {
+                return Request.CreateResponse(HttpStatusCode.InternalServerError, $"Error: {ex.Message}");
+            }
+        }
+
+
+
+
     }
 }
