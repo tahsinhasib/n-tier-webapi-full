@@ -23,6 +23,16 @@ namespace DAL.Repos
             return db.SaveChanges() > 0;
         }
 
+        //public bool Delete(int id)
+        //{
+        //    var product = Get(id);
+        //    if (product == null) return false;
+
+        //    db.Products.Remove(product);
+        //    return db.SaveChanges() > 0;
+        //}
+
+
         public Product Get(int id)
         {
             return db.Products.Find(id);

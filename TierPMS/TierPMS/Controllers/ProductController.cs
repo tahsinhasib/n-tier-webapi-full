@@ -81,5 +81,27 @@ namespace TierPMS.Controllers
         }
 
 
+
+        [HttpDelete]
+        [Route("api/product/delete/{id}")]
+        public HttpResponseMessage Delete(int id)
+        {
+            try
+            {
+                var isDeleted = ProductService.Delete(id);
+                if (isDeleted)
+                {
+                    return Request.CreateResponse(HttpStatusCode.OK, "Product deleted successfully");
+                }
+                return Request.CreateResponse(HttpStatusCode.NotFound, "Product not found or deletion failed");
+            }
+            catch (Exception ex)
+            {
+                return Request.CreateResponse(HttpStatusCode.InternalServerError, $"Error: {ex.Message}");
+            }
+        }
+
+
+
     }
 }

@@ -65,6 +65,13 @@ namespace BLL.Services
             return repo.Update(product);
         }
 
+        public static bool Delete(int id)
+        {
+            var repo = DataAccessFactory.ProductData();
+            return repo.Delete(id);
+        }
+
+
 
     }
 }
