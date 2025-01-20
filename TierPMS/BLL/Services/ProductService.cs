@@ -53,5 +53,18 @@ namespace BLL.Services
         }
 
 
+
+        public static bool Update(ProductDTO productDTO)
+        {
+            var repo = DataAccessFactory.ProductData();
+
+            // Map ProductDTO to Product entity
+            var product = GetMapper().Map<Product>(productDTO);
+
+            // Call the repository to update the product
+            return repo.Update(product);
+        }
+
+
     }
 }

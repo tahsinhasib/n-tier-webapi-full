@@ -45,5 +45,17 @@ namespace DAL.Repos
             return db.SaveChanges() > 0;
 
         }
+
+
+        // GPT code
+        //public bool Update(Product obj)
+        //{
+        //    var existingProduct = Get(obj.Id);
+        //    if (existingProduct == null) return false;
+
+        //    db.Entry(existingProduct).CurrentValues.SetValues(obj);
+        //    return db.SaveChanges() > 0;
+        //}
+
     }
 }

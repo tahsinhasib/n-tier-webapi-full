@@ -54,5 +54,32 @@ namespace TierPMS.Controllers
             }
         }
 
+
+
+        [HttpPut]
+        [Route("api/product/update")]
+        public HttpResponseMessage Update([FromBody] ProductDTO product)
+        {
+            if (!ModelState.IsValid)
+            {
+                return Request.CreateResponse(HttpStatusCode.BadRequest, ModelState);
+            }
+
+            try
+            {
+                var isUpdated = ProductService.Update(product);
+                if (isUpdated)
+                {
+                    return Request.CreateResponse(HttpStatusCode.OK, "Product updated successfully");
+                }
+                return Request.CreateResponse(HttpStatusCode.BadRequest, "Product update failed");
+            }
+            catch (Exception ex)
+            {
+                return Request.CreateResponse(HttpStatusCode.InternalServerError, $"Error: {ex.Message}");
+            }
+        }
+
+
     }
 }
